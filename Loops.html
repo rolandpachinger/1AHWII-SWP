@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <h1>Loops</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+        <script>
+// Autovervollständigung für Canvas-Befehle einschalten
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d")
+
+// Variable mit Namen 'offset' anlegen (= deklarieren) und
+// die Zahl 5 darin merken.
+let offset = 10
+let size = 50
+
+// Anweisungen in der Schleife werden so lange wiederholt,
+// so lange die Aussage 'wahr' ist.
+while (offset < 200)
+{
+    ctx.strokeRect(offset, offset, size, size)
+
+    // WICHTIG: Variable `offset` muss verändert werden
+    // damit die Bedingung in der Schleife irgendwann nicht
+    // mehr 'wahr' ist und die Schleife beendet werden kann.
+    // Ansonsten erhaelt man eine sich endlos wiederholende Schleife.
+    offset = offset + 10
+    size = size + 5
+}
+
+// TODO 1. konzentrische Quadrate
+//      2. konzentrische Kreise
+//      3. strichlierten Kreis
+
+// Viele Schleifen funktionieren folgendermassen:
+// * Vor der Schleife wird eine Variable 'a' auf einen bestimmten
+//   Anfangswert gesetzt.
+// * Vor jedem Durchlauf der Schleife wird mithilfe der Variable 'a'
+//   geprueft, ob die Anweisungen in der Schleife ausgefuehrt werden
+//   sollen.
+// * Nach jedem Schleifendurchlauf wird die Variable 'a' veraendert,
+//   sodass obige Bedingung eventuell nicht mehr erfuellt wird
+//   und die Schleife dadurch beendet wird.
+// Fuer solche Schleifen gibt es eine alternative, etwas kuerzere
+// Schreibweise:
+
+ctx.strokeStyle = "steelblue"
+for (let a = 5; a < 100; a = a + 10)
+{
+    ctx.strokeRect(a + 150, a, 50, 50)
+}
+
+// Fuer 'a = a + 10' gibt es noch eine kuerzere Schreibweise: 'a += 10'
+// (gilt auch fuer die Operatoren '-', '*' und '/')
+// Fuer das Erhoehen einer Variable um 1 gibt es noch eine kuerzere
+// Schreibweise: 'a++' (gilt auch fuer '-')
+
+// Uebungen:
+// 1. while-Uebungen von letztem Mal auf 'for' uebersetzen
+// 2. Balkendiagramm zeichnen:
+//      _       _        _ _ _      _ _ _
+//    _| |     | |_     |_| | |    | | |_|
+//  _| | |     | | |_     |_| |    | |_|
+// |_|_|_|     |_|_|_|      |_|    |_|
+// 3. Funktion zeichnen (z.B. x^2)
+//  _           _
+// | |         | |
+// | |_       _| |
+// | | |_   _| | |
+// | | | |_| | | |
+// |_|_|_|_|_|_|_|
+
+        </script>
+    </body>
+</html>
